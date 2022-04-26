@@ -10,25 +10,21 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         NavigationView {
+            
             List {
-                Section(header:
-                    HStack {
-                        Text("Monday").font(.title2).fontWeight(.bold).foregroundColor(.black)
-                        
-                        Spacer()
-                        
-                        Button(action: {}, label: {Text("Tap")})
-                    }){
-                    ForEach(mondayArr) { monday in
-                        Text(monday.title)
-                    }
-                }
+                ListView(day: "Monday", animeArr: mondayArr)
                 
-                Section(header: Text("Tuesday").font(.title2).fontWeight(.bold).foregroundColor(.black)){
-                    ForEach(tuesdayArr) { tuesday in
-                        Text(tuesday.title)
-                    }
-                }
+                ListView(day: "Tuesday", animeArr: tuesdayArr)
+                
+                ListView(day: "Wednesday", animeArr: wednesdayArr)
+                
+                ListView(day: "Thursday", animeArr: thursdayArr)
+                
+                ListView(day: "Friday", animeArr: fridayArr)
+                
+                ListView(day: "Saturday", animeArr: saturdayArr)
+                
+                ListView(day: "Sunday", animeArr: sundayArr)
             }
             .listStyle(GroupedListStyle())
             .navigationTitle("Anime Watchlist")
