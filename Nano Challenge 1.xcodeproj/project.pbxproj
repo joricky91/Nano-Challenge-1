@@ -12,6 +12,7 @@
 		512AF85F281677EB00CCF6D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 512AF85E281677EB00CCF6D0 /* Assets.xcassets */; };
 		512AF862281677EB00CCF6D0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 512AF861281677EB00CCF6D0 /* Preview Assets.xcassets */; };
 		512AF8692816782000CCF6D0 /* Anime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512AF8682816782000CCF6D0 /* Anime.swift */; };
+		512AF86B2818DB9400CCF6D0 /* AnimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512AF86A2818DB9400CCF6D0 /* AnimeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		512AF85E281677EB00CCF6D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		512AF861281677EB00CCF6D0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		512AF8682816782000CCF6D0 /* Anime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anime.swift; sourceTree = "<group>"; };
+		512AF86A2818DB9400CCF6D0 /* AnimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,11 +55,12 @@
 		512AF859281677EA00CCF6D0 /* Nano Challenge 1 */ = {
 			isa = PBXGroup;
 			children = (
+				512AF86E2818DBD500CCF6D0 /* View */,
+				512AF86D2818DBCC00CCF6D0 /* ViewModel */,
+				512AF86C2818DBC000CCF6D0 /* Model */,
 				512AF85A281677EA00CCF6D0 /* Nano_Challenge_1App.swift */,
-				512AF85C281677EA00CCF6D0 /* ContentView.swift */,
 				512AF85E281677EB00CCF6D0 /* Assets.xcassets */,
 				512AF860281677EB00CCF6D0 /* Preview Content */,
-				512AF8682816782000CCF6D0 /* Anime.swift */,
 			);
 			path = "Nano Challenge 1";
 			sourceTree = "<group>";
@@ -68,6 +71,30 @@
 				512AF861281677EB00CCF6D0 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		512AF86C2818DBC000CCF6D0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				512AF8682816782000CCF6D0 /* Anime.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		512AF86D2818DBCC00CCF6D0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				512AF86A2818DB9400CCF6D0 /* AnimeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		512AF86E2818DBD500CCF6D0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				512AF85C281677EA00CCF6D0 /* ContentView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				512AF85D281677EA00CCF6D0 /* ContentView.swift in Sources */,
+				512AF86B2818DB9400CCF6D0 /* AnimeViewModel.swift in Sources */,
 				512AF85B281677EA00CCF6D0 /* Nano_Challenge_1App.swift in Sources */,
 				512AF8692816782000CCF6D0 /* Anime.swift in Sources */,
 			);
