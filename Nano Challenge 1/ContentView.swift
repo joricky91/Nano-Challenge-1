@@ -29,7 +29,7 @@ struct ContentView: View {
             .listStyle(GroupedListStyle())
             .navigationTitle("Anime Watchlist")
         }
-  
+
     }
 }
 

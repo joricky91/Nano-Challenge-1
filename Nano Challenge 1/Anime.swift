@@ -48,30 +48,35 @@ var sundayArr: [Anime] = [
     Anime(title: "Spy x Family")
 ]
 
-
 struct ListView: View {
-    var day: String
+    @State var day: String
     @State var animeArr: [Anime]
     @State var anime: String = ""
     
     var body: some View {
         Section(header:
             HStack {
-                Text(day).font(.title2).fontWeight(.bold).foregroundColor(.black)
+                Text(day)
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .foregroundColor(.black)
                 
                 Spacer()
                 
-                Button(action: {alertView()}, label: {Image(systemName: "plus.circle")})
+                Button(action: {
+                    alertView()
+                    
+                }, label: {Image(systemName: "plus.circle")})
             }){
             ForEach(animeArr) { daily in
                 Text(daily.title)
             }
+            .onDelete(perform: delete)
         }
-        
     }
     
     func alertView() {
-        let alert = UIAlertController(title: "Add New Anime", message: "Add the anime that was released on this day", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Add New Anime", message: "Add the anime that was released on \(day)", preferredStyle: .alert)
         
         alert.addTextField { anime in
             anime.placeholder = "Insert anime title..."
@@ -88,6 +93,10 @@ struct ListView: View {
         alert.addAction(cancelAnime)
         
         UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true, completion: {})
+    }
+    
+    func delete(at offsets: IndexSet) {
+        animeArr.remove(atOffsets: offsets)
     }
 }
 
