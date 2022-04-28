@@ -39,7 +39,10 @@ struct ContentView: View {
                         }){
                             ForEach(viewModel.animeArr) { daily in
                                 if daily.day.lowercased() == day.lowercased() {
-                                    Text(daily.title)
+                                    NavigationLink(destination: AnimeDetails(anime: daily)) {
+                                        Text(daily.title)
+                                    }
+                                    
                                 }
                             
                             }
