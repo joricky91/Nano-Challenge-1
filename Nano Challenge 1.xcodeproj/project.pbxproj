@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		512AF857281677EA00CCF6D0 /* Nano Challenge 1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nano Challenge 1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		512AF857281677EA00CCF6D0 /* AniDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AniDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		512AF85A281677EA00CCF6D0 /* Nano_Challenge_1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nano_Challenge_1App.swift; sourceTree = "<group>"; };
 		512AF85C281677EA00CCF6D0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		512AF85E281677EB00CCF6D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,7 +49,7 @@
 		512AF858281677EA00CCF6D0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				512AF857281677EA00CCF6D0 /* Nano Challenge 1.app */,
+				512AF857281677EA00CCF6D0 /* AniDay.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,7 +117,7 @@
 			);
 			name = "Nano Challenge 1";
 			productName = "Nano Challenge 1";
-			productReference = 512AF857281677EA00CCF6D0 /* Nano Challenge 1.app */;
+			productReference = 512AF857281677EA00CCF6D0 /* AniDay.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -300,6 +300,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Nano Challenge 1/Preview Content\"";
@@ -317,10 +318,10 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jonathanRicky.Nano-Challenge-1";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = AniDay;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -329,6 +330,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Nano Challenge 1/Preview Content\"";
@@ -346,10 +348,10 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jonathanRicky.Nano-Challenge-1";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = AniDay;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
