@@ -29,12 +29,6 @@ struct ContentView: View {
                                 .font(.title2)
                                 .fontWeight(.bold)
                                 .foregroundColor(.black)
-                                
-                            Spacer()
-                            
-                            Button(action: {
-                                viewModel.alertView()
-                            }, label: {Image(systemName: "plus.circle")})
                         
                         }){
                             ForEach(viewModel.animeArr) { daily in
@@ -54,6 +48,11 @@ struct ContentView: View {
             }
             .listStyle(GroupedListStyle())
             .navigationTitle("Anime Watchlist")
+            .toolbar {
+                Button(action: {
+                    viewModel.alertView()
+                }, label: {Image(systemName: "plus.circle")})
+            }
         }
     }
 }
