@@ -11,7 +11,7 @@ import CoreData
 
 class AnimeViewModel: ObservableObject {
     var day: String = ""
-    @Published var animeArr: [AnimeData] = arrayOfAnime
+    @Published var animeArr: [Anime] = []
     @Published var anime: String = ""
     @Published var animeDay: String = ""
     var managedObjectContext = CoreDataManager.shared.container.viewContext
@@ -23,6 +23,16 @@ class AnimeViewModel: ObservableObject {
         
         CoreDataManager.shared.save()
         print("Success")
+    }
+    
+    func fetchAnimeData() {
+        let request = NSFetchRequest<Anime>(entityName: "Anime")
+        
+        do {
+            animeArr = try managedObjectContext.fetch(request)
+        } catch let error {
+            fatalError("Error fetching data. Error: \(error)")
+        }
     }
     
     func alertView() {

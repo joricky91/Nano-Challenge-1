@@ -11,16 +11,11 @@ struct ContentView: View {
     @StateObject var viewModel = AnimeViewModel()
     
     var body: some View {
-        
         NavigationView {
             List{
-                
                 ForEach(arrayofDay, id: \.self) { day in
-                    
                     Section(header:
-                                
                         HStack {
-        
                             Text(day)
                                 .font(.title2)
                                 .fontWeight(.bold)
@@ -28,19 +23,15 @@ struct ContentView: View {
                         
                         }){
                             ForEach(viewModel.animeArr) { daily in
-                                if daily.day.lowercased() == day.lowercased() {
+                                if daily.dayReleased?.lowercased() == day.lowercased() {
                                     NavigationLink(destination: AnimeDetails(anime: daily)) {
-                                        Text(daily.title)
+                                        Text(daily.title ?? "")
                                     }
-                                    
                                 }
-                            
                             }
                             .onDelete(perform: viewModel.delete)
                         }
-                
                 }
-                
             }
             .listStyle(GroupedListStyle())
             .navigationTitle("Anime Watchlist")
@@ -49,6 +40,9 @@ struct ContentView: View {
                     viewModel.alertView()
                 }, label: {Image(systemName: "plus.circle")})
             }
+        }
+        .onAppear {
+            viewModel.fetchAnimeData()
         }
     }
 }

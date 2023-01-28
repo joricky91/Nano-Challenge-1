@@ -6,16 +6,17 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct AnimeDetails: View {
-    var anime: AnimeData
+    var anime: Anime
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(anime.title)
+            Text(anime.title ?? "")
                 .font(.largeTitle)
             
-            Text("Released on : \(anime.day)")
+            Text("Released on : \(anime.dayReleased ?? "")")
             
             Spacer()
         }
