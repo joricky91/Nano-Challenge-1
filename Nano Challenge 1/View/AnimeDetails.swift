@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AnimeDetails: View {
-    var anime: Anime
+    var anime: AnimeData
     
     var body: some View {
         VStack(alignment: .leading) {

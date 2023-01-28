@@ -11,7 +11,7 @@ import SwiftUI
 class AnimeViewModel: ObservableObject {
     
     var day: String = ""
-    @Published var animeArr: [Anime] = arrayOfAnime
+    @Published var animeArr: [AnimeData] = arrayOfAnime
     @Published var anime: String = ""
     @Published var animeDay: String = ""
     
@@ -30,7 +30,7 @@ class AnimeViewModel: ObservableObject {
             self.anime = alert.textFields![0].text!
             self.animeDay = alert.textFields![1].text!
 //            let newAnime = Anime(title: self.anime, day: self.day)
-            self.animeArr.append(Anime(title: self.anime, day: self.animeDay))
+            self.animeArr.append(AnimeData(title: self.anime, day: self.animeDay))
         })
         let cancelAnime = UIAlertAction(title: "Cancel", style: .destructive, handler: {(_) in})
        

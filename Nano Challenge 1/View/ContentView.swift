@@ -10,10 +10,6 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var viewModel = AnimeViewModel()
     
-//    init() {
-//        UITableView.appearance().backgroundColor = .red
-//    }
-    
     var body: some View {
         
         NavigationView {
