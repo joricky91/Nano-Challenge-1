@@ -7,13 +7,23 @@
 
 import Foundation
 import SwiftUI
+import CoreData
 
 class AnimeViewModel: ObservableObject {
-    
     var day: String = ""
     @Published var animeArr: [AnimeData] = arrayOfAnime
     @Published var anime: String = ""
     @Published var animeDay: String = ""
+    var managedObjectContext = CoreDataManager.shared.container.viewContext
+    
+    func addNewData(title: String, day: String) {
+        let anime = Anime(context: managedObjectContext)
+        anime.title = title
+        anime.dayReleased = day
+        
+        CoreDataManager.shared.save()
+        print("Success")
+    }
     
     func alertView() {
         let alert = UIAlertController(title: "Add New Anime", message: "Add the anime that was released on \(day)", preferredStyle: .alert)
@@ -27,10 +37,11 @@ class AnimeViewModel: ObservableObject {
         }
         
         let addAnime = UIAlertAction(title: "Add", style: .default, handler: {(_) in
-            self.anime = alert.textFields![0].text!
-            self.animeDay = alert.textFields![1].text!
-//            let newAnime = Anime(title: self.anime, day: self.day)
-            self.animeArr.append(AnimeData(title: self.anime, day: self.animeDay))
+//            self.anime = alert.textFields![0].text!
+//            self.animeDay = alert.textFields![1].text!
+////            let newAnime = Anime(title: self.anime, day: self.day)
+//            self.animeArr.append(AnimeData(title: self.anime, day: self.animeDay))
+            self.addNewData(title: alert.textFields![0].text!, day: alert.textFields![1].text!)
         })
         let cancelAnime = UIAlertAction(title: "Cancel", style: .destructive, handler: {(_) in})
        
