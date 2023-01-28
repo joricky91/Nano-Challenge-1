@@ -18,6 +18,7 @@ class AnimeViewModel: ObservableObject {
     
     func addNewData(title: String, day: String) {
         let anime = Anime(context: managedObjectContext)
+        anime.id = UUID()
         anime.title = title
         anime.dayReleased = day
         
@@ -33,6 +34,7 @@ class AnimeViewModel: ObservableObject {
         } catch let error {
             fatalError("Error fetching data. Error: \(error)")
         }
+        print(animeArr)
     }
     
     func alertView() {
