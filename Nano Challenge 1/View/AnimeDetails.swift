@@ -20,7 +20,7 @@ struct AnimeDetails: View {
             
             Spacer()
         }
-        .frame(width: 350, height: .infinity, alignment: .leading)
+        .frame(width: 350, alignment: .leading)
     }
 }
 

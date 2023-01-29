@@ -12,6 +12,7 @@ struct Nano_Challenge_1App: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(AnimeViewModel())
         }
     }
 }

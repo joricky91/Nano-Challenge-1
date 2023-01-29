@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var viewModel = AnimeViewModel()
+    @EnvironmentObject var viewModel: AnimeViewModel
     
     var body: some View {
         NavigationView {
@@ -29,7 +29,13 @@ struct ContentView: View {
                                     }
                                 }
                             }
-                            .onDelete(perform: viewModel.delete)
+                            .onDelete(perform: { indexSet in
+                                indexSet.forEach { index in
+                                    let anime = viewModel.animeArr[index]
+                                    viewModel.delete(anime: anime)
+                                }
+                                viewModel.fetchAnimeData()
+                            })
                         }
                 }
             }

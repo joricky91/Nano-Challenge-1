@@ -23,7 +23,6 @@ class AnimeViewModel: ObservableObject {
         anime.dayReleased = day
         
         CoreDataManager.shared.save()
-        print("Success")
     }
     
     func fetchAnimeData() {
@@ -34,7 +33,6 @@ class AnimeViewModel: ObservableObject {
         } catch let error {
             fatalError("Error fetching data. Error: \(error)")
         }
-        print(animeArr)
     }
     
     func alertView() {
@@ -49,11 +47,8 @@ class AnimeViewModel: ObservableObject {
         }
         
         let addAnime = UIAlertAction(title: "Add", style: .default, handler: {(_) in
-//            self.anime = alert.textFields![0].text!
-//            self.animeDay = alert.textFields![1].text!
-////            let newAnime = Anime(title: self.anime, day: self.day)
-//            self.animeArr.append(AnimeData(title: self.anime, day: self.animeDay))
             self.addNewData(title: alert.textFields![0].text!, day: alert.textFields![1].text!)
+            self.fetchAnimeData()
         })
         let cancelAnime = UIAlertAction(title: "Cancel", style: .destructive, handler: {(_) in})
        
@@ -63,8 +58,14 @@ class AnimeViewModel: ObservableObject {
         UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true, completion: {})
     }
     
-    func delete(at offsets: IndexSet) {
-        self.animeArr.remove(atOffsets: offsets)
+    func delete(anime: Anime) {
+        managedObjectContext.delete(anime)
+        
+        do {
+            try managedObjectContext.save()
+        } catch let error {
+            print("Error \(error)")
+        }
     }
 
 }
